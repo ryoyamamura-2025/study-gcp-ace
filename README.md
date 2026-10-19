@@ -9,6 +9,7 @@ Google Cloud Associate Cloud Engineer (ACE) 試験向けの、日本語・公式
 - [Wiki ホーム](wiki/index.md)
 - [GKE: ノードプールとPodの配置](wiki/gke/node-pools-and-scheduling.md)
 - [GKE: VPCネイティブのIP範囲](wiki/gke/vpc-native-ip-ranges.md)
+- [Cloud SQL: バックアップとPITR](wiki/cloud-sql/backups-and-pitr.md)
 
 ## 運用の基本
 
