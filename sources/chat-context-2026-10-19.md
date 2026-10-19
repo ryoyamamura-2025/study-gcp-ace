@@ -34,6 +34,12 @@ completeness: partial
 - 混同しやすい点: ジョブを作成できることと、既存テーブルをSELECT/UPDATEできることは別。クエリにはジョブ作成権限と対象データ権限を組み合わせる。
 - 統合先: [BigQueryのSQLジョブとIAMロール](../wiki/bigquery/iam-query-roles.md)
 
+## 論点E: GKEのPod増加とノード増加を混同しない
+
+- 見えている学習論点: HPAでPodを増やす意味、Podの並列処理とノードの計算資源拡張の違い、新しいアプリの追加時に手動でノードを増やさない方法。
+- 混同しやすい点: Podの複製とノード台数増は別。既存ノードに余裕があればPodだけ増やせるが、CPUを使い切っているならPod数だけでは総計算資源は増えない。Cluster Autoscalerは主に配置不能Podのrequests等で判断。
+- 統合先: [HPA・VPA・Cluster Autoscaler比較](../wiki/gke/autoscaling.md)
+
 ## 収録対象外
 
 - タイトルのみ確認できる別トピックや、全文が提供されていない過去の解説は未収録。
@@ -41,6 +47,10 @@ completeness: partial
 
 ## Wiki化時に確認した公式資料
 
+- https://docs.cloud.google.com/kubernetes-engine/docs/concepts/horizontalpodautoscaler
+- https://docs.cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler
+- https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler
+- https://docs.cloud.google.com/kubernetes-engine/docs/troubleshooting/cluster-autoscaler-scale-up
 - https://docs.cloud.google.com/kubernetes-engine/docs/how-to/node-pools
 - https://docs.cloud.google.com/kubernetes-engine/docs/how-to/upgrading-a-cluster
 - https://docs.cloud.google.com/kubernetes-engine/docs/concepts/alias-ips
