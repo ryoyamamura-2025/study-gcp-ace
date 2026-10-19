@@ -28,6 +28,12 @@ completeness: partial
 - 混同しやすい点: バイナリログとバックアップの保存形式、バックアップ時点への復元と時刻指定のPITR、Enterprise/Enterprise Plusの既定設定、標準/拡張バックアップの保持ルール。
 - 統合先: [Cloud SQLのバックアップとPITR](../wiki/cloud-sql/backups-and-pitr.md)
 
+## 論点D: BigQueryのSQL実行とデータアクセスIAM
+
+- 見えている学習論点: `bigquery.jobUser` / `bigquery.user` によるSQLジョブ実行と、`bigquery.dataViewer` / `bigquery.dataEditor` によるデータ操作権限の違い。
+- 混同しやすい点: ジョブを作成できることと、既存テーブルをSELECT/UPDATEできることは別。クエリにはジョブ作成権限と対象データ権限を組み合わせる。
+- 統合先: [BigQueryのSQLジョブとIAMロール](../wiki/bigquery/iam-query-roles.md)
+
 ## 収録対象外
 
 - タイトルのみ確認できる別トピックや、全文が提供されていない過去の解説は未収録。
@@ -43,3 +49,6 @@ completeness: partial
 - https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr
 - https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/configure-pitr
 - https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/configure-pitr
+- https://docs.cloud.google.com/bigquery/docs/access-control
+- https://docs.cloud.google.com/bigquery/docs/running-queries
+- https://docs.cloud.google.com/bigquery/docs/writing-results
