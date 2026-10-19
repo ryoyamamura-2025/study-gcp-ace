@@ -2,11 +2,12 @@
 
 Google Cloud Associate Cloud Engineer (ACE) 試験向けの、日本語・公式情報ベースのナレッジベースです。
 
-> 最終整備: 2026-10-19。公開リポジトリのため、個人情報・非公開チャット全文・講座の設問や解説の転載は保存しません。
+> 最終整備: 2026-10-20。公開リポジトリのため、個人情報・非公開チャット全文・講座の設問や解説の転載は保存しません。
 
 ## Wiki を読む
 
 - [Wiki ホーム](wiki/index.md)
+- [GKE: HPA・VPA・Cluster AutoscalerとPod/ノードの違い](wiki/gke/autoscaling.md)
 - [GKE: ノードプールとPodの配置](wiki/gke/node-pools-and-scheduling.md)
 - [GKE: VPCネイティブのIP範囲](wiki/gke/vpc-native-ip-ranges.md)
 - [Cloud SQL: バックアップとPITR](wiki/cloud-sql/backups-and-pitr.md)
