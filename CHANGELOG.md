@@ -1,5 +1,11 @@
 # 更新履歴
 
+## 2026-10-19 — BigQueryのSQL実行・データ操作ロールを追加
+
+- `bigquery.jobUser`、`bigquery.dataViewer`、`bigquery.dataEditor`、`bigquery.user` の違いを現行公式資料で確認し、比較記事を追加。
+- `jobs.create` と `tables.getData` / `tables.updateData` の組み合わせ、プロジェクトとデータセットの付与範囲、ACEでの選定条件を整理。
+- Wiki索引と公開用会話ソースの要点を更新。
+
 ## 2026-10-19 — Cloud SQLバックアップ/PITRを追加
 
 - Cloud SQLの自動バックアップ、オンデマンドバックアップ、PITRの使い分けを公式資料で検証しWiki記事に追加。
