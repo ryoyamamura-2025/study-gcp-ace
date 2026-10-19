@@ -2,7 +2,7 @@
 id: ace-wiki-home
 title: GCP ACE Wiki ホーム
 type: overview
-topics: [ACE, GKE, network, Cloud SQL, backup, PITR]
+topics: [ACE, GKE, network, Cloud SQL, backup, PITR, BigQuery, IAM]
 status: verified
 verified_at: 2026-10-19
 source_ids: [SRC-CHAT-20261019-01]
@@ -21,11 +21,16 @@ source_ids: [SRC-CHAT-20261019-01]
 
 - [自動・オンデマンドバックアップとPITR](cloud-sql/backups-and-pitr.md) — MySQLバイナリログ、ログ保持、復元先と既定設定を含む
 
+## BigQuery
+
+- [SQLジョブ実行とデータ操作のIAMロール](bigquery/iam-query-roles.md) — `jobUser` / `user` と `dataViewer` / `dataEditor` の違い、組み合わせ、最小権限
+
 ## 学習時の使い方
 
 - 手順を問われたら、まず **既存リソースの維持要件、対象リソース、変えたい属性** を確認する。
 - IP割り当ての問題では、**Node / Pod / Service** と、**Standard / Autopilot、GKEのバージョン** を区別する。
 - Cloud SQLの復元方式では、**定期取得 / 明示取得 / 特定時刻の復元**を区別する。
+- BigQueryのSQL権限では、**ジョブを実行できるか / 対象データを参照・編集できるか** を別々に確認する。
 - 詳細は [スキーマ](../SCHEMA.md) および [更新ルール](../AGENTS.md) を参照。
 
 ## 出典・検証
