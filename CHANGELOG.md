@@ -1,5 +1,12 @@
 # 更新履歴
 
+## 2026-10-20 — GKEのPod/ノードのオートスケーリング比較を追加
+
+- HPA（Podレプリカ数）、VPA（PodのCPU/メモリ要求）、Cluster Autoscaler（Standardノード台数）の比較記事を追加。
+- Podを増やすことで並列処理が増える理由、ノードのCPU総量は増えない点、余剰容量がない場合の連携を整理。
+- 「新アプリが増えた際にノード容量を自動拡張」の設問判断軸と、resource requests/スケジューリングを基準にする注意点を追加。
+- ソースの要点、Wiki索引、関連記事、READMEを更新。
+
 ## 2026-10-19 — BigQueryのSQL実行・データ操作ロールを追加
 
 - `bigquery.jobUser`、`bigquery.dataViewer`、`bigquery.dataEditor`、`bigquery.user` の違いを現行公式資料で確認し、比較記事を追加。
