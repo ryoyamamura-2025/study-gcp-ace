@@ -7,6 +7,7 @@ Google Cloud Associate Cloud Engineer (ACE) 試験向けの、日本語・公式
 ## Wiki を読む
 
 - [Wiki ホーム](wiki/index.md)
+- [Compute Engine: SSH公開鍵・OS Login・IAP](wiki/compute-engine/ssh-public-keys-os-login-iap.md)
 - [GKE: HPA・VPA・Cluster AutoscalerとPod/ノードの違い](wiki/gke/autoscaling.md)
 - [GKE: ノードプールとPodの配置](wiki/gke/node-pools-and-scheduling.md)
 - [GKE: VPCネイティブのIP範囲](wiki/gke/vpc-native-ip-ranges.md)
