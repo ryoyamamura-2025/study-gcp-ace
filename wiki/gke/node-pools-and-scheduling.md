@@ -36,6 +36,7 @@ source_ids: [SRC-CHAT-20261019-01]
 
 ## 関連ページ
 
+- [HPA・VPA・Cluster AutoscalerとPod/ノード数](autoscaling.md) — Pod数とノード数の自動拡張を区別
 - [VPCネイティブIP範囲](vpc-native-ip-ranges.md) — 新しいノードやPodのIPが不足すると追加に失敗しうる
 - [Wikiホーム](../index.md)
 
