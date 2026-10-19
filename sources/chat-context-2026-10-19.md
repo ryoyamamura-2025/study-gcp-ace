@@ -22,6 +22,12 @@ completeness: partial
 - 追加確認が必要だった例外: Service IPにGKE管理範囲が利用されるクラスタもある。
 - 統合先: [VPCネイティブIP範囲](../wiki/gke/vpc-native-ip-ranges.md)
 
+## 論点C: Cloud SQLのバックアップとPITR
+
+- 見えている学習論点: 自動バックアップとオンデマンドバックアップの違い、PITRの有効化要件、MySQLのバイナリログの役割。
+- 混同しやすい点: バイナリログとバックアップの保存形式、バックアップ時点への復元と時刻指定のPITR、Enterprise/Enterprise Plusの既定設定、標準/拡張バックアップの保持ルール。
+- 統合先: [Cloud SQLのバックアップとPITR](../wiki/cloud-sql/backups-and-pitr.md)
+
 ## 収録対象外
 
 - タイトルのみ確認できる別トピックや、全文が提供されていない過去の解説は未収録。
@@ -32,3 +38,8 @@ completeness: partial
 - https://docs.cloud.google.com/kubernetes-engine/docs/how-to/node-pools
 - https://docs.cloud.google.com/kubernetes-engine/docs/how-to/upgrading-a-cluster
 - https://docs.cloud.google.com/kubernetes-engine/docs/concepts/alias-ips
+- https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options
+- https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr
+- https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr
+- https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/configure-pitr
+- https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/configure-pitr
