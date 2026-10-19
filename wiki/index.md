@@ -2,10 +2,10 @@
 id: ace-wiki-home
 title: GCP ACE Wiki ホーム
 type: overview
-topics: [ACE, GKE, network, Cloud SQL, backup, PITR, BigQuery, IAM]
+topics: [ACE, GKE, network, Cloud SQL, backup, PITR, BigQuery, IAM, Compute Engine, SSH, OS Login, IAP]
 status: verified
 verified_at: 2026-10-20
-source_ids: [SRC-CHAT-20261019-01]
+source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01]
 ---
 
 # GCP ACE 学習Wiki
@@ -26,6 +26,10 @@ source_ids: [SRC-CHAT-20261019-01]
 
 - [SQLジョブ実行とデータ操作のIAMロール](bigquery/iam-query-roles.md) — `jobUser` / `user` と `dataViewer` / `dataEditor` の違い、組み合わせ、最小権限
 
+## Compute Engine / SSHアクセス
+
+- [SSH公開鍵・プロジェクト全体鍵・OS Login・IAP](compute-engine/ssh-public-keys-os-login-iap.md) — A・Bの鍵共有、複数VMへの適用、認証と通信経路の違い
+
 ## 学習時の使い方
 
 - 手順を問われたら、まず **既存リソースの維持要件、対象リソース、変えたい属性** を確認する。
@@ -33,9 +37,10 @@ source_ids: [SRC-CHAT-20261019-01]
 - IP割り当ての問題では、**Node / Pod / Service** と、**Standard / Autopilot、GKEのバージョン** を区別する。
 - Cloud SQLの復元方式では、**定期取得 / 明示取得 / 特定時刻の復元**を区別する。
 - BigQueryのSQL権限では、**ジョブを実行できるか / 対象データを参照・編集できるか** を別々に確認する。
+- SSHの設問では、**公開鍵による認証 / IAMによるOSログイン権限 / VMへのネットワーク経路**を分けて判断する。
 - 詳細は [スキーマ](../SCHEMA.md) および [更新ルール](../AGENTS.md) を参照。
 
 ## 出典・検証
 
-- 初期資料: `SRC-CHAT-20261019-01`
+- 初期資料: `SRC-CHAT-20261019-01`、追加会話の公開用要点: `SRC-CHAT-20261020-SSH-01`
 - 検証: 2026-10-20（一部初期記事は2026-10-19）。リンク先記事ごとに公式Google Cloud文書を明記。
