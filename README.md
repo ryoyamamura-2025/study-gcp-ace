@@ -8,6 +8,7 @@ Google Cloud Associate Cloud Engineer (ACE) 試験向けの、日本語・公式
 
 - [Wiki ホーム](wiki/index.md)
 - [ACE公式模試: 出題傾向とサービス選定の判断軸](wiki/exam/official-sample-decision-patterns.md)
+- [Cloud DNS: 外部公開・内部DNS・A/CNAMEの比較](wiki/network/dns-public-internal-a-cname.md)
 - [Compute Engine: SSH公開鍵・OS Login・IAP](wiki/compute-engine/ssh-public-keys-os-login-iap.md)
 - [GKE: HPA・VPA・Cluster AutoscalerとPod/ノードの違い](wiki/gke/autoscaling.md)
 - [GKE: ノードプールとPodの配置](wiki/gke/node-pools-and-scheduling.md)
