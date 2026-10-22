@@ -4,8 +4,8 @@ title: BigQueryのクエリ実行権限とデータ操作権限
 type: comparison
 topics: [BigQuery, IAM, jobUser, user, dataViewer, dataEditor, jobs.create, tables.getData, least-privilege]
 status: verified
-verified_at: 2026-10-19
-source_ids: [SRC-CHAT-20261019-01]
+verified_at: 2026-10-23
+source_ids: [SRC-CHAT-20261019-01, SRC-OFFICIAL-SAMPLE-20261023-01]
 ---
 
 # BigQuery: SQL実行とデータアクセスのIAMロール
@@ -66,13 +66,18 @@ SQL実行プロジェクトと、参照先データのあるプロジェクト�
 - `jobUser` を特定テーブルだけに付与できると考えない。**プロジェクト、フォルダ、組織**レベルで付与するロール。
 - IAMロールは付与する**階層**で影響範囲が変わる。必要なデータセット/テーブルに `dataViewer` や `dataEditor` を絞るのが基本。
 
+### 公式模試の問題文と必要な実装権限の違い
+
+ACEの公式模試には、監査者に閲覧・レポート実行を許可する設問で「グループに dataViewer を付与」が最善選択肢となる例がある。出題意図は**IAMをグループに付与し、基本ロールより粒度が適切な事前定義ロールを選ぶ**こと。ただし、SQLクエリジョブを実行する実装では別途実行プロジェクトに jobUser（jobs.create）等が必要。模試の正答を「dataViewer単独でSQL実行可」と覚えない。
+
 ## 関連ページ
 
 - [Wikiホーム](../index.md)
+- [公式模試の判断軸と実運用上の注意点](../exam/official-sample-decision-patterns.md)
 
 ## 出典・検証
 
-Google Cloud公式資料を **2026-10-19** に確認:
+Google Cloud公式資料を **2026-10-19、2026-10-23** に確認:
 
 - [BigQuery IAM roles and permissions](https://docs.cloud.google.com/bigquery/docs/access-control)
 - [Run a query — Required roles and permissions](https://docs.cloud.google.com/bigquery/docs/running-queries)
@@ -80,3 +85,5 @@ Google Cloud公式資料を **2026-10-19** に確認:
 - [Create datasets — Required permissions](https://docs.cloud.google.com/bigquery/docs/datasets)
 
 学習会話から抽出した論点: `SRC-CHAT-20261019-01`。会話原文は未収録。
+
+追加確認（公式模試からの論点）: SRC-OFFICIAL-SAMPLE-20261023-01。設問原文は転載していない。
