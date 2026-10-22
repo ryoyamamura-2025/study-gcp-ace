@@ -2,11 +2,12 @@
 
 Google Cloud Associate Cloud Engineer (ACE) 試験向けの、日本語・公式情報ベースのナレッジベースです。
 
-> 最終整備: 2026-10-20。公開リポジトリのため、個人情報・非公開チャット全文・講座の設問や解説の転載は保存しません。
+> 最終整備: 2026-10-23。公開リポジトリのため、個人情報・非公開チャット全文・講座の設問や解説の転載は保存しません。
 
 ## Wiki を読む
 
 - [Wiki ホーム](wiki/index.md)
+- [ACE公式模試: 出題傾向とサービス選定の判断軸](wiki/exam/official-sample-decision-patterns.md)
 - [Compute Engine: SSH公開鍵・OS Login・IAP](wiki/compute-engine/ssh-public-keys-os-login-iap.md)
 - [GKE: HPA・VPA・Cluster AutoscalerとPod/ノードの違い](wiki/gke/autoscaling.md)
 - [GKE: ノードプールとPodの配置](wiki/gke/node-pools-and-scheduling.md)
