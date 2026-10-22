@@ -2,15 +2,19 @@
 id: ace-wiki-home
 title: GCP ACE Wiki ホーム
 type: overview
-topics: [ACE, GKE, network, Cloud SQL, backup, PITR, BigQuery, IAM, Compute Engine, SSH, OS Login, IAP]
+topics: [ACE, official-sample, GKE, network, Cloud SQL, backup, PITR, BigQuery, IAM, Compute Engine, SSH, OS Login, IAP]
 status: verified
 verified_at: 2026-10-20
-source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01]
+source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE-20261023-01]
 ---
 
 # GCP ACE 学習Wiki
 
 一問一答を蓄積するのではなく、**出題条件からサービス・操作を選べる** ように整理します。各記事に公式リンクと確認日を保存します。
+
+## 公式模試の出題傾向
+
+- [公式模試から学ぶサービス選定・判断軸と注意点](exam/official-sample-decision-patterns.md) — 最小権限・最小運用・費用対効果、模試の正解と実運用の条件の区別
 
 ## GKE
 
@@ -32,6 +36,8 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01]
 
 ## 学習時の使い方
 
+- 公式模試の設問では、Googleの推奨手法、運用工数、コスト、最小権限のうち何が要求されているかを先に読む。
+
 - 手順を問われたら、まず **既存リソースの維持要件、対象リソース、変えたい属性** を確認する。
 - GKEの拡張問題では、**アプリのPodレプリカ数 / Podの要求CPU・メモリ / ノードの台数** を分ける。
 - IP割り当ての問題では、**Node / Pod / Service** と、**Standard / Autopilot、GKEのバージョン** を区別する。
@@ -43,4 +49,4 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01]
 ## 出典・検証
 
 - 初期資料: `SRC-CHAT-20261019-01`、追加会話の公開用要点: `SRC-CHAT-20261020-SSH-01`
-- 検証: 2026-10-20（一部初期記事は2026-10-19）。リンク先記事ごとに公式Google Cloud文書を明記。
+- 検証: 2026-10-23（一部初期記事は2026-10-19〜20）。リンク先記事ごとに公式Google Cloud文書を明記。
