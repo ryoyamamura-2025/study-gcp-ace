@@ -16,6 +16,10 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE
 
 - [公式模試から学ぶサービス選定・判断軸と注意点](exam/official-sample-decision-patterns.md) — 最小権限・最小運用・費用対効果、模試の正解と実運用の条件の区別
 
+## ネットワーク / DNS
+
+- [外部公開DNS、内部DNS、A/CNAME、エイリアスIPの違い](network/dns-public-internal-a-cname.md) — 公開ゾーンと内部DNS、固定外部IPと名前解決、DNSとルーティングの区別
+
 ## GKE
 
 - [HPA・VPA・Cluster Autoscalerの違いとPodを増やす意味](gke/autoscaling.md) — Podレプリカ数、リソース要求、VM台数の判断軸
