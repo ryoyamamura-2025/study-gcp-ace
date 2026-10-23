@@ -1,5 +1,11 @@
 # 更新履歴
 
+## 2026-10-23 — Transfer Applianceによる2PBオフライン移行を追加
+
+- 公式模試の2PB/100Mbps/最大1Gbpsという条件に基づくネットワーク転送の理論下限時間を整理。
+- Transfer Applianceのオフライン転送、装置1台の容量上限、Cloud Interconnect/PSCとの目的の違いを比較。
+
+
 ## 2026-10-23 — Cloud DNSとCompute Engine内部DNSを比較
 
 - 公式模試でのDNS公開の論点から、Cloud DNS公開ゾーン、Compute Engine内部DNS、A/CNAME、外部IP、エイリアスIP、VPCルートの選定を整理。
