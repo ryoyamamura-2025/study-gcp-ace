@@ -2,9 +2,9 @@
 id: ace-wiki-home
 title: GCP ACE Wiki ホーム
 type: overview
-topics: [ACE, official-sample, GKE, network, Cloud SQL, backup, PITR, BigQuery, IAM, Compute Engine, SSH, OS Login, IAP]
+topics: [ACE, official-sample, GKE, network, load-balancing, Cloud SQL, backup, PITR, BigQuery, IAM, Compute Engine, SSH, OS Login, IAP]
 status: verified
-verified_at: 2026-10-20
+verified_at: 2026-10-24
 source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE-20261023-01]
 ---
 
@@ -17,6 +17,8 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE
 - [公式模試から学ぶサービス選定・判断軸と注意点](exam/official-sample-decision-patterns.md) — 最小権限・最小運用・費用対効果、模試の正解と実運用の条件の区別
 
 ## ネットワーク / DNS
+
+- [ロードバランサ選定：L7/L4、外部/内部、グローバル/リージョン](network/load-balancer-selection.md) — URLマップ、ヘルスチェック、TLS終端とNLBプロキシ/パススルー
 
 - [2PBのデータ移行: Transfer ApplianceとInterconnectの違い](network/transfer-appliance-vs-interconnect.md) — オフライン物理輸送、回線帯域、容量、PSCとの使い分け
 
@@ -41,6 +43,8 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE
 - [SSH公開鍵・プロジェクト全体鍵・OS Login・IAP](compute-engine/ssh-public-keys-os-login-iap.md) — A・Bの鍵共有、複数VMへの適用、認証と通信経路の違い
 
 ## 学習時の使い方
+
+- LBの選定は **HTTP(S)のURL単位の制御が要るか / インターネット公開か / 複数リージョンか** を分ける。
 
 - 公式模試の設問では、Googleの推奨手法、運用工数、コスト、最小権限のうち何が要求されているかを先に読む。
 
