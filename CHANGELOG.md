@@ -1,5 +1,11 @@
 # 更新履歴
 
+## 2026-10-24 — ロードバランサ選定（L7/L4とTLS）を追加
+
+- Application LBとProxy/Passthrough Network LB、外部/内部、グローバル/リージョンの選定軸を公式資料で確認。
+- URLマップによるパス振り分け、MIGのヘルスチェック、TLS終端、Cloud DNS/Cloud NATとの違いを整理。
+- Global external passthrough Network LBも存在する現行仕様を明記し、すべてのNLBがリージョン専用という誤解を防止。
+
 ## 2026-10-23 — Transfer Applianceによる2PBオフライン移行を追加
 
 - 公式模試の2PB/100Mbps/最大1Gbpsという条件に基づくネットワーク転送の理論下限時間を整理。
