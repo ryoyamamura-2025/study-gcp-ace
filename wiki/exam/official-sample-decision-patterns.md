@@ -54,6 +54,8 @@ Quotaはリソース・API使用量に対する制限。通常のCloud Billing�
 
 ## 関連ページ
 
+- [Transfer ApplianceとInterconnectの選択](../network/transfer-appliance-vs-interconnect.md)
+
 - [Wikiホーム](../index.md)
 - [BigQueryの権限比較](../bigquery/iam-query-roles.md)
 - [GKEのスケーリング](../gke/autoscaling.md)
