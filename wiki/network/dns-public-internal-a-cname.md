@@ -29,6 +29,14 @@ source_ids: [SRC-OFFICIAL-SAMPLE-20261023-01]
 
 同一VM上の複数のアプリ名（例: app1.example.com、app2.example.com）を同じ外部IPに解決させることはできる。ただし**DNSはURLパス、ポート、HTTP Hostによる宛先アプリの振り分けを行わない**。同じポートでアプリごとにルーティングする場合は、リバースプロキシやロードバランサなどを別途構成する。
 
+### CNAMEからAレコードにたどる仕組み
+
+例えば **www.example.com → CNAME: app.example.com → A: 203.0.113.10** と設定できる。CNAMEは「別のDNS名」を指すものであり、Aレコードの実体やIPアドレスに直接ひも付けるレコードではない。DNSリゾルバが別名先をさらに解決して最終的にIPアドレスを得る。
+
+複数の別名（www、shop等）が同じ正式名にCNAMEで向く場合、正式名のAレコードのIPを変更することで、別名側のCNAME値をそれぞれ変更する必要がなくなる（DNSキャッシュのTTLに留意）。
+
+**同一ホスト名にCNAMEとAは同時に置けない。** たとえば www.example.com にCNAMEを作るなら、その同じ名前にAは置けない。一方CNAMEの**参照先名** app.example.com にAがあるのは正しい。通常、DNSゾーンのapex（example.com）のCNAMEはSOA/NSと競合するため不可。Cloud DNSには公開ゾーンのapex用にALIASレコードがある（CNAMEとは挙動や制約が異なる）。
+
 ## 間違えやすい点
 
 - **Compute Engine内部DNS**は自動生成されるが、インターネット公開に使う公開DNSではない。
@@ -48,6 +56,8 @@ source_ids: [SRC-OFFICIAL-SAMPLE-20261023-01]
 
 2026-10-23にGoogle Cloud公式ドキュメントを確認。
 
+- [Cloud DNS レコードの追加・CNAMEの排他制約](https://docs.cloud.google.com/dns/docs/records)
+- [Cloud DNS レコードの概要とALIAS](https://docs.cloud.google.com/dns/docs/records-overview)
 - [Cloud DNS概要](https://docs.cloud.google.com/dns/docs/overview)
 - [DNSゾーン・公開と限定公開](https://docs.cloud.google.com/dns/docs/dns-overview)
 - [DNSレコード型](https://docs.cloud.google.com/dns/docs/records-overview)
