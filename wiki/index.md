@@ -18,6 +18,8 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE
 
 ## ネットワーク / DNS
 
+- [2PBのデータ移行: Transfer ApplianceとInterconnectの違い](network/transfer-appliance-vs-interconnect.md) — オフライン物理輸送、回線帯域、容量、PSCとの使い分け
+
 - [外部公開DNS、内部DNS、A/CNAME、エイリアスIPの違い](network/dns-public-internal-a-cname.md) — 公開ゾーンと内部DNS、固定外部IPと名前解決、DNSとルーティングの区別
 
 ## GKE
