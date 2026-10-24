@@ -44,6 +44,8 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE
 
 ## IAM / サービスアカウント
 
+- [Organization Policy・IAM・Firewall・Cloud NATの違い](iam/organization-policy-vs-iam-firewall-nat.md) — 組織の外部IP制約、継承と既存VMへの影響
+
 - [サービスアカウント権限借用とgcloud CLI・ADC認証](iam/service-account-impersonation-and-adc.md) — Service Account User/Token Creator、短期トークン、gcloud構成・ADCの違い
 
 ## Compute Engine / SSHアクセス
@@ -51,6 +53,8 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE
 - [SSH公開鍵・プロジェクト全体鍵・OS Login・IAP](compute-engine/ssh-public-keys-os-login-iap.md) — A・Bの鍵共有、複数VMへの適用、認証と通信経路の違い
 
 ## 学習時の使い方
+
+- 組織全体の設定制限はOrganization Policy、主体の権限はIAM、通信制御はFirewall、外向きアドレス変換はCloud NATと区別する。
 
 - サービスアカウントは **VM等にアタッチするactAs権限 / SAとして操作するトークン作成権限 / 操作先リソースに対するSA自身のIAM権限** を別々に判断する。
 
