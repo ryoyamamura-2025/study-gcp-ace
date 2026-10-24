@@ -2,7 +2,7 @@
 id: ace-wiki-home
 title: GCP ACE Wiki ホーム
 type: overview
-topics: [ACE, official-sample, GKE, network, load-balancing, Cloud SQL, backup, PITR, BigQuery, IAM, Compute Engine, SSH, OS Login, IAP]
+topics: [ACE, official-sample, GKE, network, load-balancing, Pub/Sub, Cloud SQL, backup, PITR, BigQuery, IAM, Compute Engine, SSH, OS Login, IAP]
 status: verified
 verified_at: 2026-10-24
 source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE-20261023-01]
@@ -24,6 +24,10 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE
 
 - [外部公開DNS、内部DNS、A/CNAME、エイリアスIPの違い](network/dns-public-internal-a-cname.md) — 公開ゾーンと内部DNS、固定外部IPと名前解決、DNSとルーティングの区別
 
+## Pub/Sub
+
+- [Fan-out・同一Subscription内の負荷分散・ACKと再配信](pubsub/fan-out-load-balancing-ack.md) — Topic/Subscription/Subscriber、At-least-once、Exactly-once、BigQuery Subscription
+
 ## GKE
 
 - [HPA・VPA・Cluster Autoscalerの違いとPodを増やす意味](gke/autoscaling.md) — Podレプリカ数、リソース要求、VM台数の判断軸
@@ -43,6 +47,8 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE
 - [SSH公開鍵・プロジェクト全体鍵・OS Login・IAP](compute-engine/ssh-public-keys-os-login-iap.md) — A・Bの鍵共有、複数VMへの適用、認証と通信経路の違い
 
 ## 学習時の使い方
+
+- Pub/Subは **複数のSubscriptionに同じメッセージを配信するFan-out / 1つのSubscriptionの複数Workerで分担する負荷分散** を区別する。
 
 - LBの選定は **HTTP(S)のURL単位の制御が要るか / インターネット公開か / 複数リージョンか** を分ける。
 
