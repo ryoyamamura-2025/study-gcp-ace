@@ -1,5 +1,10 @@
 # 更新履歴
 
+## 2026-10-24 — Pub/SubのFan-out、ACKと再配信を整理
+
+- 1 Topic・複数SubscriptionによるFan-out、同一Subscription・複数Subscriberによる処理分担の違いを追加。
+- ACK Deadline、再配信・べき等性、Exactly-onceの適用条件、BigQuery Subscriptionの使い分けをGoogle公式で確認。
+
 ## 2026-10-24 — ロードバランサ選定（L7/L4とTLS）を追加
 
 - Application LBとProxy/Passthrough Network LB、外部/内部、グローバル/リージョンの選定軸を公式資料で確認。
