@@ -1,5 +1,11 @@
 # 更新履歴
 
+## 2026-10-24 — Organization PolicyとIAM・Firewall・Cloud NATを比較
+
+- 外部IP付きVMの新規作成を禁止する `compute.vmExternalIpAccess` 制約を整理。
+- ポリシーの継承・下位での上書き、既存VM非遡及、MIG/GKEへの影響を確認。
+
+
 ## 2026-10-24 — サービスアカウントの権限借用とADCを整理
 
 - Service Account UserとToken Creatorの違い、短期認証情報とサービスアカウントキーのリスクを整理。
