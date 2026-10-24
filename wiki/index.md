@@ -42,11 +42,18 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE
 
 - [SQLジョブ実行とデータ操作のIAMロール](bigquery/iam-query-roles.md) — `jobUser` / `user` と `dataViewer` / `dataEditor` の違い、組み合わせ、最小権限
 
+## IAM / サービスアカウント
+
+- [サービスアカウント権限借用とgcloud CLI・ADC認証](iam/service-account-impersonation-and-adc.md) — Service Account User/Token Creator、短期トークン、gcloud構成・ADCの違い
+
 ## Compute Engine / SSHアクセス
 
 - [SSH公開鍵・プロジェクト全体鍵・OS Login・IAP](compute-engine/ssh-public-keys-os-login-iap.md) — A・Bの鍵共有、複数VMへの適用、認証と通信経路の違い
 
 ## 学習時の使い方
+
+- サービスアカウントは **VM等にアタッチするactAs権限 / SAとして操作するトークン作成権限 / 操作先リソースに対するSA自身のIAM権限** を別々に判断する。
+
 
 - Pub/Subは **複数のSubscriptionに同じメッセージを配信するFan-out / 1つのSubscriptionの複数Workerで分担する負荷分散** を区別する。
 
