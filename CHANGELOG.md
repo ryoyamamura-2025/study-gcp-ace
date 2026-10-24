@@ -1,5 +1,11 @@
 # 更新履歴
 
+## 2026-10-24 — HA VPNとCloud RouterのBGP動的ルーティングを追加
+
+- HA VPN + Cloud Routerによるオンプレミス接続、IPsecとBGPの役割分担、Regional/Global動的ルーティングを整理。
+- Classic VPNのBGP新規作成不可（2025-08-01）、HA VPNの99.99% SLAのトンネル要件、VPC Peering/Cloud NATとの違いを公式資料で確認。
+
+
 ## 2026-10-24 — Organization PolicyとIAM・Firewall・Cloud NATを比較
 
 - 外部IP付きVMの新規作成を禁止する `compute.vmExternalIpAccess` 制約を整理。
