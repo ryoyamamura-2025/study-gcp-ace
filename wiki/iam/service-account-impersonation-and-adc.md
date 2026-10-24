@@ -2,7 +2,7 @@
 id: iam-service-account-impersonation-and-adc
 title: サービスアカウント権限借用とgcloud CLI・ADC認証
 type: comparison
-topics: [ACE, IAM, service-account, impersonation, Service Account User, Service Account Token Creator, gcloud, ADC, keyless-authentication]
+topics: [ACE, IAM, service-account, impersonation, Service Account User, Service Account Token Creator, gcloud, ADC, keyless-authentication, named-configuration]
 status: verified
 verified_at: 2026-10-24
 source_ids: []
@@ -43,6 +43,25 @@ source_ids: []
 
 短期アクセストークンの生成自体は`Token Creator`で許可されるが、操作先のアクセス権は**対象SAが持つIAMロール**による。本人に対象リソースのロールを直接付与する必要はない。
 
+### gcloudのNamed Configuration：用途別に複数の設定を持つ
+
+gcloud CLIは`default`だけでなく、**複数のNamed Configuration**を作成できる。構成ごとに`core/project`、`core/account`、`compute/region`、`auth/impersonate_service_account`等を別々に保存できる。ログイン済みのユーザー認証情報自体は構成ごとに分離された別ストアではない。
+
+| 操作 | 使用する方法 |
+| --- | --- |
+| 作成 | `gcloud config configurations create dev-config`（既定では作成した構成を有効化） |
+| 構成一覧の確認 | `gcloud config configurations list` |
+| アクティブな構成の切替 | `gcloud config configurations activate prod-config` |
+| 1コマンドにだけ構成を指定 | `gcloud ... --configuration=prod-config` |
+| 現在のターミナル等の一連の操作で指定 | 環境変数 `CLOUDSDK_ACTIVE_CONFIG_NAME=prod-config` を指定 |
+| 適用中のプロパティの確認 | `gcloud config list` |
+
+**実務上の選定の考え方**：
+- 手作業ではプロジェクト/環境/役割別に作成して必要に応じて切り替えればよい。
+- スクリプトでは意図しないアクティブ構成に依存しないよう、実行時の`--configuration`指定またはそのプロセス/ターミナルだけの環境変数で構成を明示する。コマンドごとにグローバルなアクティブ構成を切り替える必要はない。
+- `activate`で共有される既定のアクティブ構成を頻繁に切り替えると、並行作業や誤った本番操作の原因になり得る。
+- **設定の分離≠IAMの分離**。使用するSA自体に最小権限を付与し、権限借用を許可する対象も絞る。
+
 ### gcloud CLI認証 vs ADC
 
 | 設定 | 主な利用者 | 注意 |
@@ -59,6 +78,7 @@ Cloud Run/Compute Engine等に関連付けたSAは、一般にメタデータサ
 - `roles/iam.serviceAccountUser`（actAs）と`roles/iam.serviceAccountTokenCreator`（token発行）は同義ではない。
 - `gcloud auth application-default login` は`gcloud auth login`とは別。gcloud CLI自身はADCを通常使わない。
 - `gcloud config set auth/impersonate_service_account` は**アクティブなgcloud構成**に適用される。別の構成やADCに自動反映されるわけではない。
+- 複数configは用途別の設定保存に便利だが、切り替えるだけで実際のIAM権限が追加・制限されるわけではない。
 - `gcloud auth activate-service-account` + JSON鍵で操作できるが、鍵の生成・保管・漏洩リスクがある。鍵レス要件では不適切。
 - Token Creatorは非常に強力。SAに権限過剰なロールがあれば権限借用したユーザーも実質そのアクセスが可能になる。**対象SA単位**など必要最小限の範囲に付与する。
 
@@ -70,6 +90,7 @@ Cloud Run/Compute Engine等に関連付けたSAは、一般にメタデータサ
 - 「特定のコマンドだけSAとして使う」→ `--impersonate-service-account`。
 - 「ローカルでSDKクライアントライブラリを動かす」→ ADC（必要ならSA権限借用ADC）。
 - 「SAの権限テスト」→ SA本人がどのリソース権限を持つかも確認。
+- 「開発・本番で別プロジェクトやSAを使い分ける」→ Named Configurationを分け、スクリプトでは構成の明示指定を検討。
 
 ## 関連ページ
 
@@ -81,6 +102,8 @@ Cloud Run/Compute Engine等に関連付けたSAは、一般にメタデータサ
 
 Google Cloud公式資料を2026-10-24に確認。
 
+- [Manage gcloud CLI configurations](https://docs.cloud.google.com/sdk/docs/configurations)
+- [gcloud configurations create](https://docs.cloud.google.com/sdk/gcloud/reference/config/configurations/create)
 - [Use service account impersonation](https://docs.cloud.google.com/docs/authentication/use-service-account-impersonation)
 - [Roles for service account authentication](https://docs.cloud.google.com/iam/docs/service-account-permissions)
 - [Authenticate for the gcloud CLI](https://docs.cloud.google.com/sdk/docs/authenticate)
