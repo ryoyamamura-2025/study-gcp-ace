@@ -1,5 +1,11 @@
 # 更新履歴
 
+## 2026-10-24 — サービスアカウントの権限借用とADCを整理
+
+- Service Account UserとToken Creatorの違い、短期認証情報とサービスアカウントキーのリスクを整理。
+- gcloud CLI認証とADC、単発フラグとgcloud構成での権限借用を公式資料で検証し、判断軸を追加。
+
+
 ## 2026-10-24 — Pub/SubのFan-out、ACKと再配信を整理
 
 - 1 Topic・複数SubscriptionによるFan-out、同一Subscription・複数Subscriberによる処理分担の違いを追加。
