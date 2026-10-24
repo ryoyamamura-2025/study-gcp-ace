@@ -1,5 +1,11 @@
 # 更新履歴
 
+## 2026-10-24 — HA VPN・Cloud Router・BGP
+
+- HA VPNのIPsec暗号化とCloud Routerの経路制御、Classic VPNの静的ルーティングを区別。
+- 動的ルーティング、SLA条件、2025年8月からのClassic VPN BGP非対応、VPC Peering・Cloud NATとの差を整理。
+
+
 ## 2026-10-24 — HA VPNとCloud RouterのBGP動的ルーティングを追加
 
 - HA VPN + Cloud Routerによるオンプレミス接続、IPsecとBGPの役割分担、Regional/Global動的ルーティングを整理。
