@@ -18,6 +18,8 @@ source_ids: [SRC-CHAT-20261019-01, SRC-CHAT-20261020-SSH-01, SRC-OFFICIAL-SAMPLE
 
 ## ネットワーク / DNS
 
+- [HA VPNとCloud Router・BGP](network/ha-vpn-cloud-router-bgp.md) — オンプレミス接続の構成と新規サブネットの自動経路更新
+
 - [ロードバランサ選定：L7/L4、外部/内部、グローバル/リージョン](network/load-balancer-selection.md) — URLマップ、ヘルスチェック、TLS終端とNLBプロキシ/パススルー
 
 - [2PBのデータ移行: Transfer ApplianceとInterconnectの違い](network/transfer-appliance-vs-interconnect.md) — オフライン物理輸送、回線帯域、容量、PSCとの使い分け
